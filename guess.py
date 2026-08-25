@@ -1,6 +1,6 @@
 print("")
 print("")
-print("\033[1;3;35m   Welcom to\033[0m \033[34;1;3mGuessing Game\033[0m")
+print("\033[1;3;35m   Welcome to\033[0m \033[34;1;3mGuessing Game\033[0m")
 print("")
 print("")
 print(" \033[36;1;4mRules:\033[0m \033[3mI will pick a number in my minde [1;100] and you will try to guess it.\033[0m")
