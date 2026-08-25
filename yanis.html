@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            yanis.com
+        </title>
+    </head>
+    <body>
+        <p align="center">
+            <font size=5 color="red">Enter your marks.</font>
+          <ul id="list1">
+            <li type="disc">Math</li>
+            <li><input type="number" id="n1">
+            <li type="disc">Physics</li>
+            <li><input type="number" id="n2">
+            <li type="disc">Arabic</li>
+            <li><input type="number" id="n3">
+            <li type="disc">Science</li>
+            <li><input type="number" id="n4">
+            <li type="disc">French</li>
+            <li><input type="number" id="n5">
+            <li type="disc">English</li>
+            <li><input type="number" id="n6">
+          </ul>
+          <ul id="list2">
+            <li type="disc">History</li>
+            <li><input type="number" id="n7">
+            <li type="disc">Tamazight</li>
+            <li><input type="number" id="n8">
+            <li type="disc">Islamic</li>
+            <li><input type="number" id="n9">
+            <li type="disc">Philosophy</li>
+            <li><input type="number" id="n10">
+            <li type="disc">Sport</li>
+            <li><input type="number" id="n11">
+          </ul>
+        </p>
+        <script>
+            let list = document.getElementById("list1");
+
+            list.style.listStyle = "none";
+            list.style.fontSize = "17px";
+            list.style.fontFamily = "Arial, sans-serif";
+            list.style.color = "black";
+            list.style.padding = "0px 0px 0px 10px";
+            list.style.gap = "20px";
+            list.style.display = "column";
+            list.style.justifyContent = "flex-start";
+            list.style.float = "left";
+        </script>
+        <script>
+            let list2 = document.getElementById("list2");
+
+            list2.style.listStyle = "none";
+            list2.style.fontSize = "17px";
+            list2.style.fontFamily = "Arial, sans-serif";
+            list2.style.color = "black";
+            list2.style.padding = "15px 0px 0px 250px";
+            list2.style.gap = "20px";
+            list2.style.display = "column";
+            list2.style.justifyContent = "flex-start";
+        </script>
+        <p align="center">
+            <button onclick="calcul()">Calculate your BAC</button>
+        </p>
+        <p align="center">
+            <font size=5 color="green">BAC: <span id="result"></span></font>
+        </p>
+        <script>
+            function calcul() {
+                let n1 = parseFloat(document.getElementById("n1").value);
+                let n2 = parseFloat(document.getElementById("n2").value);
+                let n3 = parseFloat(document.getElementById("n3").value);
+                let n4 = parseFloat(document.getElementById("n4").value);
+                let n5 = parseFloat(document.getElementById("n5").value);
+                let n6 = parseFloat(document.getElementById("n6").value);
+                let n7 = parseFloat(document.getElementById("n7").value);
+                let n8 = parseFloat(document.getElementById("n8").value);
+                let n9 = parseFloat(document.getElementById("n9").value);
+                let n10 = parseFloat(document.getElementById("n10").value);
+                let n11 = parseFloat(document.getElementById("n11").value);
+
+                let bac = (n1 * 7 + n2 * 6 + n3 * 3 + (n4 + n5 + n6 + n7 + n8 + n9 + n10) * 2 + n11) / 31;
+
+                document.getElementById("result").innerText = bac.toFixed(2);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+         margin: 0;
+         height: 100vh;
+         background-image: url('https://img.magnific.com/free-vector/mathematical-geometric-background-vector-gradient-blue-education-remix_53876-114100.jpg?semt=ais_hybrid&w=740&q=80');
+         background-size: cover;
+         background-position: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: rgb(255, 255, 255); text-align: center;">The parabola form is : f(x)= ax² + bx + c</h1>
+    <h2 style="color: rgb(255, 255, 255); text-align: center;">Enter the values of (a, b, c) :</h2>
+
+    <p align="center">
+     <input type="number" id="a" placeholder=" a = " style="text-align: center;">
+     <input type="number" id="b" placeholder=" b = " style="text-align: center;">
+     <input type="number" id="c" placeholder=" c = " style="text-align: center;">
+    </p>
+
+    <p align="center">
+     <button onclick="cal()" style="color: rgb(255, 255, 255); background-color: #3a92f0; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Show Result :</button>
+    </p>
+
+    <p style="color: rgb(255, 255, 255); text-align: center;" id="opens"></p>
+
+    <p style="color: rgb(255, 255, 255); text-align: center;" id="maxmin"></p>
+
+    <p style="color: rgb(255, 255, 255); text-align: center;" id="point"></p>
+
+    <script>
+
+        function cal() {
+
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+
+            let x = -(b / (2 * a));
+            let y = c - a * (x ** 2);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+
+                document.getElementById("opens").style.color = "red";
+                document.getElementById("opens").style.fontSize = "40px";
+                document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for a, b, and c.";
+
+            } 
+
+            else {
+
+                if (a > 0) {
+
+                 document.getElementById("opens").style.color = "green";
+                 document.getElementById("opens").style.fontSize = "30px";
+                 document.getElementById("opens").innerText = "The parabola opens upwards";
+                 document.getElementById("maxmin").style.fontSize = "30px";
+                 document.getElementById("maxmin").innerText = "The minimum value of the parabola is : " + y.toFixed(2);
+                 document.getElementById("point").style.fontSize = "30px";
+                 document.getElementById("point").innerText = "The vertex of the parabola is at the point : (" + x.toFixed(2) + " ; " + y.toFixed(2) + ")";
+
+                }
+
+                else if (a < 0) {
+
+                 document.getElementById("opens").style.color = "purple";
+                 document.getElementById("opens").style.fontSize = "30px";
+                 document.getElementById("opens").innerText = "The parabola opens downwards";
+                 document.getElementById("maxmin").style.fontSize = "30px";
+                 document.getElementById("maxmin").innerText = "The maximum value of the parabola is : " + y.toFixed(2);
+                 document.getElementById("point").style.fontSize = "30px";
+                 document.getElementById("point").innerText = "The vertex of the parabola is at the point : (" + x.toFixed(2) + " ; " + y.toFixed(2) + ")";
+
+                }
+
+                 else if (a === 0) {
+
+                 document.getElementById("opens").style.color = "red";
+                 document.getElementById("opens").style.fontSize = "40px";
+                 document.getElementById("opens").innerText = "The function is not a parabola";
+
+                }
+
+            }
+           
+        }
+
+    </script>
+
+</body>
+
+</html>
