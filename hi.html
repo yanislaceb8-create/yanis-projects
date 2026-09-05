@@ -22,10 +22,30 @@
      <input type="number" id="b" placeholder=" b = " style="text-align: center;">
      <input type="number" id="c" placeholder=" c = " style="text-align: center;">
     </p>
-
     <p align="center">
-     <button onclick="cal()" style="color: rgb(255, 255, 255); background-color: #3a92f0; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Show Result :</button>
+    <button class="result" onclick="cal()">
+        Show Results :
+    </button>
     </p>
+
+    <style>
+        .result {
+            background-color:rgb(10,102,194);
+            color:white;
+            border:none;
+            height:30px;
+            width:150px;
+            border-radius:15px;
+            margin-right:5px;
+            font-weight:bold;
+            cursor:pointer;
+            transition: all 0.5s ease;
+        }
+        button:hover {
+            background-color: darkblue;
+            transform: scale(1.05);
+        }
+    </style>
 
     <p style="color: rgb(255, 255, 255); text-align: center;" id="opens"></p>
 
