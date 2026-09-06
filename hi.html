@@ -66,12 +66,49 @@
 
             if (isNaN(a) || isNaN(b) || isNaN(c)) {
 
-                document.getElementById("opens").style.color = "red";
-                document.getElementById("opens").style.fontSize = "40px";
-                document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for a, b, and c.";
+                if (isNaN(a) && !isNaN(b) && !isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for a";
+                }
 
-            } 
+                else if (!isNaN(a) && isNaN(b) && !isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for b";
+                }
 
+                else if (!isNaN(a) && !isNaN(b) && isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for c";
+                }
+
+                else if (isNaN(a) && isNaN(b) && !isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for a and b";
+                }
+
+                else if (isNaN(a) && !isNaN(b) && isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for a and c";
+                }
+
+                else if (!isNaN(a) && isNaN(b) && isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for b and c";
+                }
+
+                else if (isNaN(a) && isNaN(b) && isNaN(c)) {
+                    document.getElementById("opens").style.color = "red";
+                    document.getElementById("opens").style.fontSize = "40px";
+                    document.getElementById("opens").innerText = "ERROR!! : Please enter valid numbers for a, b, and c";
+                }
+            }
+            
             else {
 
                 if (a > 0) {
@@ -102,7 +139,7 @@
 
                  document.getElementById("opens").style.color = "red";
                  document.getElementById("opens").style.fontSize = "40px";
-                 document.getElementById("opens").innerText = "The function is not a parabola";
+                 document.getElementById("opens").innerText = "The function is not a parabola Make sure that a≠0";
 
                 }
 
